@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { Suspense } from 'react';
 import Player from './player';
 import { useSearchParams } from 'next/navigation';
 import videoStats from './videoStats';
@@ -11,7 +11,7 @@ const VideoPlayerPage = () =>{
 
   return (
     <div className='pt-20'> 
-     <Player videoId={iframeVideo} ></Player>
+     <Suspense><Player videoId={iframeVideo} ></Player></Suspense>
     </div>
   );
 };
